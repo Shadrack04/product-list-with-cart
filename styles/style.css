@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "redHatText";
+  src: url(../assets/fonts/RedHatText-VariableFont_wght.ttf);
+}
+html {
+  font-family: "redHatText", system-ui, sans-serif;
+}
+
+main {
+  width: 80%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+main .product-list {
+  border: 2px solid red;
+}
+main .product-list h1 {
+  margin: 10px 0;
+}
+main .cart-section {
+  border: 2px solid blue;
+}
+
+.list-grid {
+  display: grid;
+}
+.list-grid .food-card {
+  max-width: 150px;
+}/*# sourceMappingURL=style.css.map */
