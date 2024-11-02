@@ -9,22 +9,81 @@ html {
 main {
   width: 80%;
   margin: 10px auto;
+  padding: 20px;
   display: grid;
-  grid-template-columns: 70% 30%;
-}
-main .product-list {
-  border: 2px solid red;
+  grid-template-columns: 65% 35%;
 }
 main .product-list h1 {
   margin: 10px 0;
 }
-main .cart-section {
-  border: 2px solid blue;
+
+main {
+  background-color: hsl(13, 31%, 94%);
 }
 
 .list-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 0 auto;
 }
 .list-grid .food-card {
-  max-width: 150px;
+  margin: 0 auto;
+}
+.list-grid .food-card .image-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+.list-grid .food-card .image-container img {
+  border-radius: 5px;
+}
+.list-grid .food-card .image-container button {
+  all: unset;
+  text-align: center;
+  display: block;
+  width: 50%;
+  background-color: hsl(20, 50%, 98%);
+  border: 1px solid hsl(14, 86%, 42%);
+  border-radius: 20px;
+  padding: 5px 15px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  z-index: 100;
+  cursor: pointer;
+}
+.list-grid .food-card .image-container button:hover {
+  background-color: hsl(14, 86%, 42%);
+}
+.list-grid .food-card .details {
+  margin-top: 30px;
+}
+.list-grid .food-card .details p {
+  color: hsl(7, 20%, 60%);
+}
+.list-grid .food-card .details p.food-name {
+  color: black;
+  font-size: 1.1rem;
+}
+.list-grid .food-card .details p.price {
+  color: hsl(14, 86%, 42%);
+}
+
+.cart-section .cart-container {
+  padding: 10px;
+  width: 80%;
+  background-color: hsl(20, 50%, 98%);
+  margin: 10px 20px;
+}
+.cart-section .cart-container h4 {
+  color: hsl(14, 86%, 42%);
+}
+.cart-section .cart-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart-section .cart-container div p {
+  font-size: 0.8rem;
 }/*# sourceMappingURL=style.css.map */
