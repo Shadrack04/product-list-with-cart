@@ -105,3 +105,10 @@ main {
     }
   }
 }
+
+@media (max-width: 599px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}

@@ -86,4 +86,11 @@ main {
 }
 .cart-section .cart-container div p {
   font-size: 0.8rem;
+}
+
+@media (max-width: 599px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
