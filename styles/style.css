@@ -7,9 +7,9 @@ html {
 }
 
 main {
-  width: 80%;
+  width: 85%;
   margin: 10px auto;
-  padding: 20px;
+  padding: 15px;
   display: grid;
   grid-template-columns: 65% 35%;
 }
@@ -40,12 +40,14 @@ main {
 .list-grid .food-card .image-container button {
   all: unset;
   text-align: center;
-  display: block;
+  display: flex;
+  justify-content: space-around;
   width: 50%;
+  font-size: 0.8rem;
   background-color: hsl(20, 50%, 98%);
   border: 1px solid hsl(14, 86%, 42%);
   border-radius: 20px;
-  padding: 5px 15px;
+  padding: 8px 15px;
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -55,6 +57,7 @@ main {
 }
 .list-grid .food-card .image-container button:hover {
   background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
 }
 .list-grid .food-card .details {
   margin-top: 30px;
@@ -72,7 +75,7 @@ main {
 
 .cart-section .cart-container {
   padding: 10px;
-  width: 80%;
+  width: 90%;
   background-color: hsl(20, 50%, 98%);
   margin: 10px 20px;
 }
