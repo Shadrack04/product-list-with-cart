@@ -74,6 +74,7 @@ main {
 }
 
 .cart-section .cart-container {
+  border-radius: 8px;
   padding: 10px;
   width: 90%;
   background-color: hsl(20, 50%, 98%);
@@ -82,13 +83,90 @@ main {
 .cart-section .cart-container h4 {
   color: hsl(14, 86%, 42%);
 }
-.cart-section .cart-container div {
+.cart-section .cart-container .inner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.cart-section .cart-container div p {
+.cart-section .cart-container .inner-container p {
   font-size: 0.8rem;
+}
+
+.cart-items {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.516);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.cart-items .cart-item-details .name {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+.cart-items .cart-item-details .qty {
+  font-size: 1.2rem;
+  color: hsl(14, 86%, 42%);
+}
+.cart-items .cart-item-details .rate,
+.cart-items .cart-item-details .amount {
+  font-size: 1.2rem;
+  color: hsl(7, 20%, 60%);
+}
+.cart-items .close {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 3px;
+}
+.cart-items .close:hover {
+  border: 2px solid black;
+}
+
+.total-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total-container h5 {
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.475);
+}
+
+.delivery {
+  display: flex;
+  gap: 5px;
+  width: 80%;
+  border-radius: 5px;
+  padding: 15px 10px;
+  background-color: hsl(13, 31%, 94%);
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+.delivery .carbon {
+  font-size: 1.3rem;
+}
+
+.confirm-order-btn {
+  all: unset;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  font-size: 0.8rem;
+  background-color: hsl(20, 50%, 98%);
+  border: 1px solid hsl(14, 86%, 42%);
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.confirm-order-btn:hover {
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
 }
 
 @media (max-width: 599px) {
