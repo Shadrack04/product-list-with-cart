@@ -27,3 +27,7 @@ export function getNumberOfItemsInCart(cart) {
   );
   cartQuantity.textContent = quantity;
 }
+
+export function getTotalAmount(cartItem, matchingItem) {
+  return matchingItem.price * cartItem.quantity;
+}
