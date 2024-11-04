@@ -1,5 +1,6 @@
 import { fetchData, renderItems } from "./products.js";
-import { addToCart } from "./cart.js";
+import { cart, addToCart } from "./cart.js";
+import { renderOrder } from "./order.js";
 
 export class Product {
   constructor(product) {
@@ -10,15 +11,20 @@ export class Product {
   }
 }
 
-const useData = async () => {
+// get the product in an array of object form
+const getProductData = async () => {
   const data = await fetchData();
   renderItems(data);
 };
-useData();
+getProductData();
+renderOrder(cart);
+
+// using delegation to add event listener to the addToCartBtn
 const container = document.querySelector(".list-grid");
 container.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart-btn")) {
     const productName = e.target.dataset.productName;
     addToCart(productName);
+    renderOrder(cart);
   }
 });

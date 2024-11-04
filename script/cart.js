@@ -1,4 +1,7 @@
-export const cart = [];
+export const cart = [
+  { productName: "Waffle with Berries", quantity: 1 },
+  { productName: "Vanilla Bean Crème Brûlée", quantity: 2 },
+];
 
 export function addToCart(productName) {
   let matchingItem;
@@ -15,5 +18,4 @@ export function addToCart(productName) {
       quantity: 1,
     });
   }
-  console.log(cart);
 }

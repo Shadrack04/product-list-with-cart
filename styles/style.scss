@@ -102,6 +102,9 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      .js-cart-items-container {
+        width: 100%;
+      }
       p {
         font-size: 0.8rem;
       }
