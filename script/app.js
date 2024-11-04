@@ -1,5 +1,5 @@
 import { fetchData, renderItems } from "./products.js";
-import { cart, addToCart } from "./cart.js";
+import { cart, addToCart, getNumberOfItemsInCart } from "./cart.js";
 import { renderOrder } from "./order.js";
 
 export class Product {
@@ -18,6 +18,7 @@ const getProductData = async () => {
 };
 getProductData();
 renderOrder(cart);
+getNumberOfItemsInCart(cart);
 
 // using delegation to add event listener to the addToCartBtn
 const container = document.querySelector(".list-grid");
@@ -26,5 +27,6 @@ container.addEventListener("click", (e) => {
     const productName = e.target.dataset.productName;
     addToCart(productName);
     renderOrder(cart);
+    getNumberOfItemsInCart(cart);
   }
 });

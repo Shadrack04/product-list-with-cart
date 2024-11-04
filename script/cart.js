@@ -19,3 +19,11 @@ export function addToCart(productName) {
     });
   }
 }
+export function getNumberOfItemsInCart(cart) {
+  const cartQuantity = document.querySelector(".cart-quantity");
+  let quantity = cart.reduce(
+    (accumulator, currentItem) => accumulator + currentItem.quantity,
+    0
+  );
+  cartQuantity.textContent = quantity;
+}
