@@ -136,16 +136,19 @@ main {
       color: $Rose-400;
     }
   }
-  .close {
+  .remove-cart-item-btn {
     border: 1px solid black;
     border-radius: 50%;
     padding: 3px;
-    &:hover {
-      border: 2px solid black;
+    &:hover svg {
+      fill: white;
     }
   }
 }
 
+.cart-svg {
+  pointer-events: none;
+}
 .total-container {
   width: 100%;
   padding: 10px;
@@ -188,7 +191,14 @@ main {
     color: $Rose-50;
   }
 }
-
+.icon-shopping-cart,
+.close-svg {
+  pointer-events: none;
+  fill: $Red;
+  &:hover {
+    fill: white;
+  }
+}
 @media (max-width: 599px) {
   main {
     grid-template-columns: 1fr;

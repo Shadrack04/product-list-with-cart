@@ -21,8 +21,8 @@ renderOrder(cart);
 getNumberOfItemsInCart(cart);
 
 // using delegation to add event listener to the addToCartBtn
-const container = document.querySelector(".list-grid");
-container.addEventListener("click", (e) => {
+const dishContainer = document.querySelector(".list-grid");
+dishContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart-btn")) {
     const productName = e.target.dataset.productName;
     addToCart(productName);
