@@ -59,6 +59,7 @@ main {
         background-color: $Rose-50;
         border: 1px solid $Red;
         border-radius: 20px;
+        font-weight: bold;
         padding: 8px 15px;
         position: absolute;
         left: 50%;
@@ -113,7 +114,7 @@ main {
 }
 
 .cart-items {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.516);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 100%;
   display: flex;
   align-items: center;
@@ -179,7 +180,8 @@ main {
   display: flex;
   justify-content: space-around;
   width: 50%;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: bold;
   background-color: $Rose-50;
   border: 1px solid $Red;
   border-radius: 20px;
@@ -199,6 +201,87 @@ main {
     fill: white;
   }
 }
+
+.modal-container {
+  background-color: $Rose-50;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 40vw;
+  .modal-header {
+    padding: 20px 30px;
+    svg {
+      margin-bottom: 10px;
+    }
+    p {
+      color: $Rose-400;
+    }
+  }
+  .modal-body {
+    margin: 10px 30px;
+    background-color: $Rose-100;
+    .order-food {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      margin: 10px 0;
+      .thumbnail {
+        width: 70px;
+        margin: 5px 5px;
+      }
+      .order-food-title {
+        width: calc(100% - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .total-amount {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+      .total-amount-pay {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .start-new-order-btn-container {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .start-new-order-btn {
+      @extend .confirm-order-btn;
+      width: 80%;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 900;
+}
+
+.hidden {
+  display: none;
+}
+
+.open {
+  display: block;
+}
+
 @media (max-width: 599px) {
   main {
     grid-template-columns: 1fr;
