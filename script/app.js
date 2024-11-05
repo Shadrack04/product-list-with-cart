@@ -1,6 +1,7 @@
 import { cartButton, fetchData, renderItems } from "./products.js";
 import { cart, addToCart, getNumberOfItemsInCart } from "./cart.js";
 import { renderOrder } from "./order.js";
+import { renderCheckoutPage } from "./order-utils.js";
 
 const confirmOrderBtn = document.querySelector(".confirm-order-btn");
 const modal = document.querySelector(".modal-container");
@@ -36,8 +37,10 @@ dishContainer.addEventListener("click", (e) => {
 });
 
 confirmOrderBtn.addEventListener("click", () => {
+  console.log(cart);
   if (cart.length !== 0) {
     modal.classList.add("open");
     overlay.classList.add("open");
+    renderCheckoutPage(cart);
   }
 });

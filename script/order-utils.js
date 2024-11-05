@@ -1,4 +1,6 @@
 import { renderOrder } from "./order.js";
+import { fetchData } from "./products.js";
+import { getTotalAmount } from "./cart.js";
 
 export function renderEmptyOrder() {
   return `
@@ -105,4 +107,42 @@ export function removeOrder(productName, cart) {
     return cartItem.productName !== productName;
   });
   renderOrder(cart);
+}
+
+export async function renderCheckoutPage(cart) {
+  const products = await fetchData();
+  const orderFoodContainer = document.querySelector(".js-order-food-container");
+  const checkoutTotal = document.querySelector(".total-amount-pay");
+  let html = "";
+  let totalAmount = 0;
+  cart.forEach((cartItem) => {
+    let matchingItem;
+    products.forEach((product) => {
+      if (cartItem.productName === product.name) {
+        matchingItem = product;
+      }
+    });
+    if (matchingItem) {
+      totalAmount += getTotalAmount(cartItem, matchingItem);
+      html += `
+      <div class="order-food">
+          <div class="thumbnail">
+            <img src="${matchingItem.image.thumbnail}" alt="" />
+          </div>
+          <div class="order-food-title">
+            <div class="order-food-details">
+              <p class="name">${matchingItem.name}</p>
+              <p>
+                <span class="qty">${cartItem.quantity}x </span>
+                <span class="rate">@$${matchingItem.price} </span>
+              </p>
+            </div>
+            <p class="amount">$${matchingItem.price * cartItem.quantity}</p>
+          </div>
+        </div>
+    `;
+    }
+  });
+  orderFoodContainer.innerHTML = html;
+  checkoutTotal.textContent = totalAmount;
 }
