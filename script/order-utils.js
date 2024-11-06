@@ -2,6 +2,9 @@ import { renderOrder } from "./order.js";
 import { fetchData } from "./products.js";
 import { getTotalAmount } from "./cart.js";
 
+const modal = document.querySelector(".modal-container");
+const overlay = document.querySelector(".overlay");
+
 export function renderEmptyOrder() {
   return `
     <div class="inner-container">
@@ -145,4 +148,13 @@ export async function renderCheckoutPage(cart) {
   });
   orderFoodContainer.innerHTML = html;
   checkoutTotal.textContent = totalAmount;
+}
+
+export function openModal() {
+  modal.classList.add("open");
+  overlay.classList.add("open");
+}
+export function closeModal() {
+  modal.classList.remove("open");
+  overlay.classList.remove("open");
 }
