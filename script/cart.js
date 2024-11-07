@@ -1,7 +1,9 @@
-export const cart = [
-  { productName: "Waffle with Berries", quantity: 1 },
-  { productName: "Vanilla Bean Crème Brûlée", quantity: 2 },
-];
+export let cart =
+  getFromLocalStorage() ||
+  [
+    // { productName: "Waffle with Berries", quantity: 1 },
+    // { productName: "Vanilla Bean Crème Brûlée", quantity: 2 },
+  ];
 
 export function addToCart(productName) {
   let matchingItem;
@@ -12,11 +14,13 @@ export function addToCart(productName) {
   });
   if (matchingItem) {
     matchingItem.quantity++;
+    savetoLocalStorage(cart);
   } else {
     cart.push({
       productName: productName,
       quantity: 1,
     });
+    savetoLocalStorage(cart);
   }
 }
 export function getNumberOfItemsInCart(cart) {
@@ -30,4 +34,11 @@ export function getNumberOfItemsInCart(cart) {
 
 export function getTotalAmount(cartItem, matchingItem) {
   return matchingItem.price * cartItem.quantity;
+}
+
+export function savetoLocalStorage(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+export function getFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("cart"));
 }

@@ -188,6 +188,10 @@ main {
   fill: white;
 }
 
+.empty-icon {
+  margin: auto;
+}
+
 .modal-container {
   background-color: hsl(20, 50%, 98%);
   border-radius: 5px;

@@ -1,9 +1,17 @@
 import { renderOrder } from "./order.js";
 import { fetchData } from "./products.js";
-import { getTotalAmount } from "./cart.js";
+import {
+  getTotalAmount,
+  cart,
+  getNumberOfItemsInCart,
+  savetoLocalStorage,
+} from "./cart.js";
 
 const modal = document.querySelector(".modal-container");
 const overlay = document.querySelector(".overlay");
+const totalContainer = document.querySelector(".total-container");
+const deliveryContainer = document.querySelector(".delivery");
+const confirmOrderBtn = document.querySelector(".confirm-order-btn");
 
 export function renderEmptyOrder() {
   return `
@@ -17,6 +25,7 @@ export function renderEmptyOrder() {
       height="128"
       fill="none"
       viewBox="0 0 128 128"
+      class='empty-icon'
     >
       <path
         fill="#260F08"
@@ -109,6 +118,8 @@ export function removeOrder(productName, cart) {
   cart = cart.filter((cartItem) => {
     return cartItem.productName !== productName;
   });
+  savetoLocalStorage(cart);
+  getNumberOfItemsInCart(cart);
   renderOrder(cart);
 }
 
@@ -157,4 +168,15 @@ export function openModal() {
 export function closeModal() {
   modal.classList.remove("open");
   overlay.classList.remove("open");
+}
+
+export function hideConfirmSection() {
+  totalContainer.classList.add("hidden");
+  deliveryContainer.classList.add("hidden");
+  confirmOrderBtn.classList.add("hidden");
+}
+export function showConfirmSection() {
+  totalContainer.classList.remove("hidden");
+  deliveryContainer.classList.remove("hidden");
+  confirmOrderBtn.classList.remove("hidden");
 }

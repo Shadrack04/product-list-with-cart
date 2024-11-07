@@ -1,14 +1,22 @@
 import { cart, getTotalAmount } from "./cart.js";
 import { fetchData } from "./products.js";
-import { renderEmptyOrder, renderOrders, removeOrder } from "./order-utils.js";
+import {
+  renderEmptyOrder,
+  renderOrders,
+  removeOrder,
+  hideConfirmSection,
+  showConfirmSection,
+} from "./order-utils.js";
 
 const cartItemsContainer = document.querySelector(".js-cart-items-container");
 const totalAmount = document.querySelector(".total-amount");
+
 export async function renderOrder(cart) {
   const products = await fetchData();
   let html = "";
   let itemsAmount = 0;
   if (cart.length === 0) {
+    hideConfirmSection();
     html = renderEmptyOrder();
   }
   cart.forEach((cartItem) => {
@@ -21,8 +29,10 @@ export async function renderOrder(cart) {
     if (matchingItem) {
       itemsAmount += getTotalAmount(cartItem, matchingItem);
       totalAmount.textContent = `$${itemsAmount}`;
+      showConfirmSection();
       html += renderOrders(cartItem, matchingItem);
     } else {
+      hideConfirmSection();
       html = renderEmptyOrder();
     }
   });
