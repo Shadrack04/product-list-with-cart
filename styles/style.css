@@ -60,6 +60,13 @@ main {
   background-color: hsl(14, 86%, 42%);
   color: hsl(20, 50%, 98%);
 }
+.list-grid .food-card .image-container button:hover .icon-shopping-cart {
+  fill: white;
+  pointer-events: none;
+}
+.list-grid .food-card .image-container button .icon-shopping-cart {
+  pointer-events: none;
+}
 .list-grid .food-card .details {
   margin-top: 30px;
 }
@@ -125,16 +132,23 @@ main {
   padding: 3px;
 }
 .cart-items .remove-cart-item-btn:hover svg {
-  fill: white;
+  fill: hsl(14, 86%, 42%);
+}
+.cart-items .remove-cart-item-btn svg {
+  fill: hsl(14, 86%, 42%);
+  pointer-events: none;
 }
 
 .cart-svg {
   pointer-events: none;
 }
 
+.confirmation-section {
+  padding: 10px;
+}
+
 .total-container {
   width: 100%;
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,11 +161,11 @@ main {
 .delivery {
   display: flex;
   gap: 5px;
-  width: 80%;
+  width: 100%;
   border-radius: 5px;
   padding: 15px 10px;
   background-color: hsl(13, 31%, 94%);
-  margin: 10px 0;
+  margin: 10px auto;
   font-size: 1.4rem;
 }
 .delivery .carbon {
@@ -163,14 +177,14 @@ main {
   text-align: center;
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 90%;
   font-size: 1.1rem;
   font-weight: bold;
   background-color: hsl(20, 50%, 98%);
   border: 1px solid hsl(14, 86%, 42%);
   border-radius: 20px;
   padding: 8px 15px;
-  margin: 10px 0;
+  margin: 10px auto;
   cursor: pointer;
 }
 .confirm-order-btn:hover, .modal-container .start-new-order-btn-container .start-new-order-btn:hover {
@@ -179,13 +193,9 @@ main {
 }
 
 .icon-shopping-cart,
-.close-svg {
-  pointer-events: none;
+.close {
   fill: hsl(14, 86%, 42%);
-}
-.icon-shopping-cart:hover,
-.close-svg:hover {
-  fill: white;
+  pointer-events: none;
 }
 
 .modal-container {
