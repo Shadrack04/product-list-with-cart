@@ -70,6 +70,9 @@ main {
         &:hover {
           background-color: $Red;
           color: $Rose-50;
+          .icon-shopping-cart {
+            fill: white;
+          }
         }
       }
     }
@@ -193,7 +196,7 @@ main {
     color: $Rose-50;
   }
 }
-.icon-shopping-cart,
+
 .close-svg {
   pointer-events: none;
   fill: $Red;

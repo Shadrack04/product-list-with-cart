@@ -60,6 +60,9 @@ main {
   background-color: hsl(14, 86%, 42%);
   color: hsl(20, 50%, 98%);
 }
+.list-grid .food-card .image-container button:hover .icon-shopping-cart {
+  fill: white;
+}
 .list-grid .food-card .details {
   margin-top: 30px;
 }
@@ -178,12 +181,10 @@ main {
   color: hsl(20, 50%, 98%);
 }
 
-.icon-shopping-cart,
 .close-svg {
   pointer-events: none;
   fill: hsl(14, 86%, 42%);
 }
-.icon-shopping-cart:hover,
 .close-svg:hover {
   fill: white;
 }
