@@ -29,6 +29,7 @@ getNumberOfItemsInCart(cart);
 const dishContainer = document.querySelector(".list-grid");
 dishContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart-btn")) {
+    console.log(cart);
     const productName = e.target.dataset.productName;
     addToCart(productName);
     renderOrder(cart);

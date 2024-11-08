@@ -1,4 +1,4 @@
-import { cart, getTotalAmount } from "./cart.js";
+import { cart, getFromLocalStorage, getTotalAmount } from "./cart.js";
 import { fetchData } from "./products.js";
 import {
   renderEmptyOrder,
@@ -12,6 +12,8 @@ const cartItemsContainer = document.querySelector(".js-cart-items-container");
 const totalAmount = document.querySelector(".total-amount");
 
 export async function renderOrder(cart) {
+  console.log(cart);
+  cartItemsContainer.innerHTML = "";
   const products = await fetchData();
   let html = "";
   let itemsAmount = 0;
@@ -41,6 +43,6 @@ export async function renderOrder(cart) {
   cartItemsContainer.addEventListener("click", (e) => {
     if (e.target.classList.contains("remove-cart-item-btn"));
     const productName = e.target.dataset.matchingItemName;
-    removeOrder(productName, cart);
+    removeOrder(productName);
   });
 }

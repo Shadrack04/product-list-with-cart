@@ -3,8 +3,10 @@ import { fetchData } from "./products.js";
 import {
   getTotalAmount,
   cart,
+  updateCart,
   getNumberOfItemsInCart,
   savetoLocalStorage,
+  getFromLocalStorage,
 } from "./cart.js";
 
 const modal = document.querySelector(".modal-container");
@@ -114,10 +116,12 @@ export function renderOrders(cartItem, matchingItem) {
   `;
 }
 
-export function removeOrder(productName, cart) {
-  cart = cart.filter((cartItem) => {
-    return cartItem.productName !== productName;
-  });
+export function removeOrder(productName) {
+  const newCart = cart.filter(
+    (cartItem) => cartItem.productName !== productName
+  );
+  updateCart(newCart);
+  console.log(cart);
   savetoLocalStorage(cart);
   getNumberOfItemsInCart(cart);
   renderOrder(cart);

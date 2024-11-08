@@ -5,6 +5,10 @@ export let cart =
     // { productName: "Vanilla Bean Crème Brûlée", quantity: 2 },
   ];
 
+export function updateCart(newCart) {
+  cart = newCart;
+}
+
 export function addToCart(productName) {
   let matchingItem;
   cart.forEach((cartItem) => {
