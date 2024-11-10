@@ -121,7 +121,7 @@ export function removeOrder(productName) {
     (cartItem) => cartItem.productName !== productName
   );
   updateCart(newCart);
-  console.log(cart);
+  console.log("removed", cart);
   savetoLocalStorage(cart);
   getNumberOfItemsInCart(cart);
   renderOrder(cart);

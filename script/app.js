@@ -1,5 +1,5 @@
 import { cartButton, fetchData, renderItems } from "./products.js";
-import { cart, addToCart, getNumberOfItemsInCart } from "./cart.js";
+import { cart, addToCart, getNumberOfItemsInCart, appendSvg } from "./cart.js";
 import { renderOrder } from "./order.js";
 import { renderCheckoutPage, openModal, closeModal } from "./order-utils.js";
 
@@ -29,8 +29,8 @@ getNumberOfItemsInCart(cart);
 const dishContainer = document.querySelector(".list-grid");
 dishContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart-btn")) {
-    console.log(cart);
     const productName = e.target.dataset.productName;
+    appendSvg(e, cart, productName);
     addToCart(productName);
     renderOrder(cart);
     getNumberOfItemsInCart(cart);

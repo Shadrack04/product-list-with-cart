@@ -56,6 +56,7 @@ main {
         justify-content: space-around;
         width: 50%;
         font-size: 0.8rem;
+        color: $Red;
         background-color: $Rose-50;
         border: 1px solid $Red;
         border-radius: 20px;
@@ -67,6 +68,9 @@ main {
         transform: translate(-50%, 50%);
         z-index: 100;
         cursor: pointer;
+        .icon-shopping-cart {
+          fill: $Red;
+        }
         &:hover {
           background-color: $Red;
           color: $Rose-50;
@@ -287,6 +291,19 @@ main {
 
 .open {
   display: block;
+}
+
+.second-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .increase-quantity,
+  .decrease-quantity {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: 599px) {

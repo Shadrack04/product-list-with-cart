@@ -12,7 +12,6 @@ const cartItemsContainer = document.querySelector(".js-cart-items-container");
 const totalAmount = document.querySelector(".total-amount");
 
 export async function renderOrder(cart) {
-  console.log(cart);
   cartItemsContainer.innerHTML = "";
   const products = await fetchData();
   let html = "";
